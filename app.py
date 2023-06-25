@@ -1,4 +1,5 @@
 import streamlit as st
+import webbrowser
 
 def convert_to_view_source_url(url):
     if url.startswith("http://"):
@@ -16,8 +17,8 @@ def main():
     view_source_url = convert_to_view_source_url(url)
 
     if st.button("View Source"):
-        st.experimental_set_query_params(url=view_source_url)
-        st.experimental_rerun()
+        webbrowser.open_new_tab(view_source_url)
 
 if __name__ == "__main__":
     main()
+    
